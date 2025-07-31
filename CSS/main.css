@@ -78,23 +78,62 @@
 }
 
 .join-inputs-form {
-    border: 1px solid black;
+ 
     width: 600px;
     height: 500px;
     display: flex;
     flex-direction: column;
+    padding-top: 1rem;
 }
 
 
 .join-name-container {
-    height: 60px;
-    border: 1px solid black;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.join-info-container {
+    display: flex;
+    flex-direction: column;
+
+    
 }
 
 .join-input-name {
     display: flex;
     flex-direction: column;
 }
+
+.join-info-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-block: 0.5rem;
+}
+
+.join-input-label {
+    color: white;
+    font-size: 15px;
+}
+
+
+.join-inputs-footer {
+    height: 80px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+
+.error-message-container {
+    width: 400px;
+    height: 60px;
+  
+}
+
+.error-message-text {
+    color: rgb(255, 80, 80);
+}
+
