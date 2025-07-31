@@ -65,4 +65,13 @@
    display: flex;
    flex-direction: column;
    border-radius: 20px;
+   padding: 1rem;
+}
+
+
+.join-inputs-header {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-block: 1rem;
 }
