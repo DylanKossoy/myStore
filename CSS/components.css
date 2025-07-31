@@ -1,0 +1,34 @@
+
+
+
+.header-button-container button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.header-left-button {
+    background: var(--color-header-left-button);
+
+    color: white;
+}
+
+.header-right-button {
+    background: var(--color-header-right-button);
+
+    
+}
+.header-left-button:hover {
+    background: var(--color-header-left-button-hover);
+
+    color: white;
+}
+
+.header-right-button:hover {
+    background: var(--color-header-right-button-hover);
+
+    
+}
