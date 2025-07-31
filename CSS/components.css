@@ -1,12 +1,16 @@
 
 
 
-.header-button-container button {
+.btn {
     width: 120px;
     height: 40px;
     border: none;
     font-size: 15px;
     cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -18,6 +22,8 @@
 
 .header-right-button {
     background: var(--color-header-right-button);
+    
+    color: black;
 
     
 }
