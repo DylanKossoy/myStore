@@ -11,25 +11,26 @@
 }
 
 .header-container {
-    height: 100px;
+    height: 150px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3rem;
+ 
 }
 
 .logo-container {
-    width: 150px;
-    height: 100px;
+    width: 250px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 1rem;
+   
+   
 }
 
 
 .header-button-container {
     width: 300px;
-    height: 100px;
+    height: 150px;
 
     margin-right: 2rem;
     display: flex;
@@ -41,7 +42,7 @@
 
 .welcome-body-container {
     padding-top: 4rem;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 150px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -50,7 +51,7 @@
 }
 
 .join-body-container {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 150px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,8 +60,9 @@
 
 .join-inputs-container {
    background: var(--color-join-inputs-container);
-   width: 600px;
-   height: 600px;
+   width: 700px;
+   height: 700px;
    display: flex;
    flex-direction: column;
+   border-radius: 20px;
 }
