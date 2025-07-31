@@ -66,6 +66,7 @@
    flex-direction: column;
    border-radius: 20px;
    padding: 1rem;
+   align-items: center;
 }
 
 
@@ -74,4 +75,12 @@
     color: white;
     text-align: center;
     margin-block: 1rem;
+}
+
+.join-inputs-form {
+    border: 1px solid black;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
 }
