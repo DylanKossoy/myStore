@@ -65,7 +65,7 @@
 
 .login-input-wrap input {
     height: 50px;
-    background: var(--color-join-inputs);
+    background: var(--color-login-inputs);
     border: none;
     font-size: 20px;
     padding-left: 0.5rem; 

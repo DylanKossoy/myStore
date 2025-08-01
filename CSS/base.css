@@ -103,8 +103,37 @@ textarea:not([rows]) {
 }
 
 
-
+/* fonts */
 @font-face {
     font-family: "Libre Baskerville";
     src: url("../assets/fonts/LibreBaskerville-Regular.woff2") format("woff2");
+}
+
+
+
+.shake {
+  animation: shake .3s ease-in-out;
+}
+
+
+/* animations */
+
+@keyframes shake {
+  0% {
+    transform: translateX(-10px);
+    background: rgb(156, 92, 92);
+  }
+  25% {
+    transform: translateX(20px);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  75% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(-10px);
+    background: var(--color-login-inputs);
+  }
 }
