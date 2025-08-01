@@ -77,6 +77,14 @@
     margin-block: 1rem;
 }
 
+.login-inputs-header {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin-block: 1rem;
+    
+}
+
 .join-inputs-form {
  
     width: 600px;
@@ -84,6 +92,16 @@
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
+}
+.login-inputs-form {
+ 
+    width: 600px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+   
+    justify-content: center;
 }
 
 
@@ -111,8 +129,17 @@
     flex-direction: column;
     margin-block: 0.5rem;
 }
+.login-input-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-block: 2rem;
+}
 
 .join-input-label {
+    color: white;
+    font-size: 15px;
+}
+.login-input-label {
     color: white;
     font-size: 15px;
 }
@@ -133,7 +160,52 @@
   
 }
 
+.login-error-container {
+    width: 400px;
+    height: 60px;
+  
+}
+
+.login-error-message {
+    color: rgb(255, 80, 80);
+}
+
 .error-message-text {
     color: rgb(255, 80, 80);
 }
+
+
+
+
+.login-body-container {
+    height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-inputs-container {
+    background: var(--color-join-inputs-container);
+   width: 700px;
+   height: 700px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 20px;
+   padding: 1rem;
+   align-items: center;
+
+}
+
+
+.login-inputs-footer {
+    height: 80px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+
 

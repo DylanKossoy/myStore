@@ -47,7 +47,7 @@
     border: none;
     font-size: 20px;
     padding-left: 0.5rem; 
-
+    
 }
 
 
@@ -59,10 +59,25 @@
 
 .join-info-container input {
     height: 50px;
-  
+    
+}
+
+
+.login-input-wrap input {
+    height: 50px;
+    background: var(--color-join-inputs);
+    border: none;
+    font-size: 20px;
+    padding-left: 0.5rem; 
 }
 
 .join-go-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.login-go-button {
     background: none;
     border: none;
     outline: none;
