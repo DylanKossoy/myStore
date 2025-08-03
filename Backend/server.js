@@ -1,26 +1,25 @@
 import express from 'express'
-import cors from 'cors'
 import dotenv from 'dotenv'
-import mongoose from 'mongoose'
+import connectDB from './config/db.js'
 import userRoutes from './routes/userRoutes.js'
 
+// Load environment variables
 dotenv.config()
+
+// Connect to MongoDB
+connectDB()
+
 const app = express()
 
-app.use(cors())
+// Middleware to parse JSON from frontend
 app.use(express.json())
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log(' MongoDB connected'))
-  .catch(err => console.error(' MongoDB connection error:', err))
-
+// Routes
 app.use('/api/users', userRoutes)
 
-app.get('/', (req, res) => {
-  res.send('API is running...')
-})
-
 const PORT = process.env.PORT || 5000
+
+// Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`)
+  console.log(`🚀 Server running on http://localhost:${PORT}`)
 })
