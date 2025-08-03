@@ -88,10 +88,11 @@
 .join-inputs-form {
  
     width: 600px;
-    height: 500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
+    
 }
 .login-inputs-form {
  
@@ -146,7 +147,10 @@
 
 
 .join-inputs-footer {
-    height: 80px;
+    height: 100px;
+
+    margin-top: 1rem;
+    
     width: 600px;
     display: flex;
     justify-content: space-between;
