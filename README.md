@@ -38,5 +38,4 @@ This project is designed as a hands-on exercise to learn how the backend works u
 
 ---
 
-## 📁 Folder Structure
 
