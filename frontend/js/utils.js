@@ -8,8 +8,8 @@
 export function triggerShake(field) {
     field.classList.add('shake')
 
-    setInterval(() => {
+    setTimeout(() => {
         field.classList.remove('shake')
 
-    },500)
+    }, 300)
 }

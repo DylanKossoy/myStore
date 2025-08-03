@@ -1,7 +1,8 @@
 import { triggerShake } from './utils.js'
 
 
-
+const firstInput = document.querySelector('.join-input-first-name')
+const lastInput = document.querySelector('.join-input-last-name');
 const usernameInput = document.querySelector('.join-input-username');
 const emailInput = document.querySelector('.join-input-email')
 const passwordInput = document.querySelector('.join-input-password')
@@ -11,15 +12,48 @@ const confirmPasswordInput = document.querySelector('.join-input-confirm-passwor
 
 
 
-function validateInputs({username, email, password, confirmPassword}) {
+function validateInputs({first, last, username, email, password, confirmPassword}) {
+
+    let error = false
 
 
-    if(!username || !email || !password || !confirmPassword) {
-        
-    
-        return '*All fields need to be filled out*'
+    if(!first) {
+        triggerShake(firstInput)
+        error = true
     }
 
+    if(!last) {
+        triggerShake(lastInput)
+        error = true
+    }
+
+    if(!username) {
+        triggerShake(usernameInput)
+        error = true;
+    }
+
+    if(!email) {
+        triggerShake(emailInput)
+        error = true
+    }
+
+    if(!password) {
+        triggerShake(passwordInput)
+        error = true
+    }
+
+    if(!confirmPassword) {
+        triggerShake(confirmPasswordInput) 
+        error = true
+    }
+
+
+
+    if(error) {
+        return '*All fields need to be filled out*'
+
+    }
+    
     if(password !== confirmPassword) {
         return '*Passwords must match*'
     }
@@ -55,6 +89,8 @@ async function handleSubmit(e) {
 
 
     const userInfo = {
+        first: document.querySelector('.join-input-first-name').value.trim(),
+        last: document.querySelector('.join-input-last-name').value.trim(),
         username: document.querySelector('.join-input-username').value.trim(),
         email: document.querySelector('.join-input-email').value.trim(),
         password: document.querySelector('.join-input-password').value.trim(),
