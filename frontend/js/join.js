@@ -55,10 +55,14 @@ function validateInputs({first, last, username, email, password, confirmPassword
     }
     
     if(password !== confirmPassword) {
+        triggerShake(passwordInput)
+        triggerShake(confirmPasswordInput)
         return '*Passwords must match*'
     }
 
     if(password.length < 6) {
+        triggerShake(passwordInput)
+        triggerShake(confirmPasswordInput)
         return '*Passwords must be 6 or more characters'
 
     }
