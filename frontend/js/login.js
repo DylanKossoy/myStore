@@ -2,8 +2,8 @@ import { triggerShake } from './utils.js'
 
 
 
-let usernameInput = document.querySelector('.login-input-username')
-let passwordInput = document.querySelector('.login-input-password');
+const usernameInput = document.querySelector('.login-input-username')
+const passwordInput = document.querySelector('.login-input-password');
 
 
 function validateLogin({ username, password }) {
@@ -24,6 +24,7 @@ function validateLogin({ username, password }) {
     if(error) {
         return '* Fill out all fields *'
     }
+}
 
 
 
@@ -45,8 +46,13 @@ function showError(error) {
 function handleLogin(e) {
     e.preventDefault()
 
+    const userInfo = {
+        username: document.querySelector('.login-input-username').value.trim(),
+        password: document.querySelector('.login-input-password').value.trim()
+    }
 
-    let errorMessage = validateLogin(usernameInput.value)
+
+    let errorMessage = validateLogin(userInfo)
 
     if(errorMessage) {
         showError(errorMessage)
@@ -56,9 +62,10 @@ function handleLogin(e) {
 
 
     clearError()
+    console.log('no error')
 
 
 }
 
 
-document.querySelector('.login-go-button').addEventListener('submit', handleLogin());
+document.querySelector('.login-inputs-form').addEventListener('submit', handleLogin);
