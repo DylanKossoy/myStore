@@ -48,7 +48,17 @@ function handleLogin(e) {
 
     let errorMessage = validateLogin(usernameInput.value)
 
+    if(errorMessage) {
+        showError(errorMessage)
+        return
+    }
 
+
+
+    clearError()
 
 
 }
+
+
+document.querySelector('.login-go-button').addEventListener('submit', handleLogin());
