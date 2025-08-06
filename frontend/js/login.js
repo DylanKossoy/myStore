@@ -45,6 +45,7 @@ function showError(error) {
 
 function handleLogin(e) {
     e.preventDefault()
+    
 
     const userInfo = {
         username: document.querySelector('.login-input-username').value.trim(),
@@ -62,7 +63,7 @@ function handleLogin(e) {
 
 
     clearError()
-    console.log('no error')
+  
 
 
 }
