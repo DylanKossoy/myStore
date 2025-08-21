@@ -1,4 +1,4 @@
-
+import { createCard } from "./createCard.js"
 
 
 export function activateWelcomePage(data) {
@@ -10,3 +10,5 @@ export function activateWelcomePage(data) {
 
 
 }
+
+

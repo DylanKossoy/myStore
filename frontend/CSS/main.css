@@ -34,12 +34,35 @@
     width: 400px;
     height: calc(100vh - 150px);
     background: rgba(0, 0, 0, 0.29);
+    display: flex;
+    position: relative;
+}
+
+.star-img {
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
 .welcome-middle-container {
     width: 1000px;
     height: calc(100vh - 150px);
     background: rgba(0, 0, 0, 0.684);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: auto;
+    padding: 1rem;
+
+}
+
+.card {
+    width: 122px;
+    height: 150px;
+    background: rgba(0, 215, 104, 0.823);
+    margin: .5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
 }
 
 .welcome-right-container {
