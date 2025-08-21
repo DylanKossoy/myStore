@@ -110,7 +110,39 @@ async function handleSubmit(e) {
 
 
     clearError()
-    console.log('hell yeah cleared and valid and now i can put in more logic')
+
+    let url = 'http://localhost:3000/api/users/register'
+
+    let username = userInfo.username
+    let email = userInfo.email
+    let password = userInfo.password
+
+
+    try {
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({ username, email, password })
+        }
+
+        let response = await fetch(url, options)
+
+
+        if(response.status === 201) {
+            console.log("user created! Good job Dylan")
+    
+            setTimeout(()=> {
+                window.location.href = './welcome.html'
+
+            }, 500)
+        } else {
+            console.log(response.status)
+        }
+    } catch(err) {
+        console.log(err)
+    }
 
     
     
