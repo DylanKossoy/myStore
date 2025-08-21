@@ -3,10 +3,13 @@ import mongoose from "mongoose";
 import "dotenv/config";
 import userRoutes from "./routes/userRoutes.js";
 import connectDB from './config/db.js'
+import cors from "cors"
 
 const app = express();
 app.use(express.json()); // body parser
 
+
+app.use(cors()) // cors is used when local hosts are different 3000 and 5500
 // MongoDB connection
 
 
