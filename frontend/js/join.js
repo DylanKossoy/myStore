@@ -1,4 +1,5 @@
 import { triggerShake } from './utils.js'
+import { activateWelcomePage } from './welcome.js'
 
 
 const firstInput = document.querySelector('.join-input-first-name')
@@ -131,12 +132,19 @@ async function handleSubmit(e) {
 
 
         if(response.status === 201) {
-            console.log("user created! Good job Dylan")
-    
-            setTimeout(()=> {
-                window.location.href = './welcome.html'
 
-            }, 500)
+            const data = await response.json()
+
+
+            window.location.href = './welcome.html'
+            document.addEventListener('DOMContentLoaded', () => {
+                activateWelcomePage(data)
+
+            })
+
+
+    
+            
         } else {
             console.log(response.status)
         }
