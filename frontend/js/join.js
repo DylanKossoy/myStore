@@ -137,10 +137,7 @@ async function handleSubmit(e) {
 
 
             window.location.href = './welcome.html'
-            document.addEventListener('DOMContentLoaded', () => {
-                activateWelcomePage(data)
-
-            })
+           
 
 
     

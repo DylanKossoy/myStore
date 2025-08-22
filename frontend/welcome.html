@@ -1,77 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome Page</title>
 
-    <link rel="stylesheet" href="./CSS/base.css">
-    <link rel="stylesheet" href="./CSS/variables.css">
-    <link rel="stylesheet" href="./CSS/components.css">
-    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/base.css" />
+    <link rel="stylesheet" href="./CSS/variables.css" />
+    <link rel="stylesheet" href="./CSS/components.css" />
+    <link rel="stylesheet" href="./CSS/main.css" />
 
-    <script type="module" src="./js/welcome.js" defer ></script>
-    <script type="module" src="./js/main.js" defer ></script>
-
-</head>
-<body>
-
+    <script type="module" src="./js/welcome.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
+  </head>
+  <body>
     <div class="main-container">
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="./assets/img/logo-transparent-png.png" alt="" class="logo-img">
-            </div>
-
-
-            <div class="header-search-container">
-                <img src="./assets/icons/search.png" alt="" class="search-img">
-                <input type="text" class="search-input" placeholder="Search Pokemon">
-            </div>
-
-            <div class="header-name-container">
-                <span class="header-name">namename</span>
-            </div>
+      <div class="header-container">
+        <div class="logo-container">
+          <img
+            src="./assets/img/logo-transparent-png.png"
+            alt=""
+            class="logo-img"
+          />
         </div>
 
-        <div class="wel-body-container">
-            <div class="welcome-left-container">
-                <img src="./assets/icons/star.png" alt="" class="star-img">
-
-            </div>
-            <div class="welcome-middle-container">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            </div>
-            <div class="welcome-right-container">
-                <div class="welcome-right-box"></div>
-                <div class="welcome-right-box"></div>
-                <div class="welcome-right-box"></div>
-            </div>
-
+        <div class="header-search-container">
+          <img src="./assets/icons/search.png" alt="" class="search-img" />
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search Pokemon"
+          />
+          <button class="search-button">
+            <img
+              src="./assets/icons/arrow-right.png"
+              alt=""
+              class="search-right-arrow-img"
+            />
+          </button>
         </div>
+
+        <div class="header-name-container">
+          <span class="header-name">namename</span>
+        </div>
+      </div>
+
+      <div class="wel-body-container">
+        <div class="welcome-left-container">
+          <img src="./assets/icons/star.png" alt="" class="star-img" />
+        </div>
+        <div class="welcome-middle-container">
+          <div class="card-container"></div>
+          <div class="card-next-container">
+            <button class="card-next">Load More</button>
+          </div>
+        </div>
+        <div class="welcome-right-container">
+          <div class="welcome-right-box"></div>
+          <div class="welcome-right-box"></div>
+          <div class="welcome-right-box"></div>
+        </div>
+      </div>
     </div>
-    
-
-
-
-</body>
+  </body>
 </html>
