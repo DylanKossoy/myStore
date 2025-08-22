@@ -1,109 +1,123 @@
-import { createCard } from "./createCard.js"
-import { fetchPokemon } from "./fetchData.js"
+import { createCard } from "./createCard.js";
+import { fetchPokemon } from "./fetchData.js";
 
-let pokemonArray = []
+let pokemonArray = [];
 let startOffset = 0;
 
+let nextButton = document.querySelector(".card-next");
+let searchButton = document.querySelector(".search-button");
+let searchInput = document.querySelector(".search-input");
 
-
-
-
-let nextButton = document.querySelector('.card-next')
-let searchButton = document.querySelector('.search-button')
-let searchInput = document.querySelector('.search-input').value
-
-
-activateWelcomePage()
-
-
-
+activateWelcomePage();
 
 export async function activateWelcomePage() {
-       
+  let arr = await fetchPokemon(startOffset);
 
-        let arr = await fetchPokemon(startOffset)
-        
-        pokemonArray.push(...arr.results)
-        
-        console.log(pokemonArray)
-        createCards(pokemonArray)
-        
-        nextButton.addEventListener('click', async () => {
-                startOffset += 20
-                let newArr = await fetchPokemon(startOffset)
-                console.log(newArr)
-                pokemonArray.push(...newArr.results);
-                console.log(pokemonArray)
-               
-                createCards(pokemonArray)
+  pokemonArray.push(...arr.results);
 
-                
-                
-        })
+  if (!searchInput.value) {
+    createCards(pokemonArray);
+  } else {
 
+  }
 
-        
+  nextButton.addEventListener("click", async () => {
+	if(searchInput.value) return
+    startOffset += 20;
+    let newArr = await fetchPokemon(startOffset);
+    console.log(newArr);
+    pokemonArray.push(...newArr.results);
+    console.log(pokemonArray);
+
+    createCards(pokemonArray);
+  });
 
 
+  searchInput.addEventListener("input", async (e) => {
 
-        
+	let container = document.querySelector('.card-container')
+	if(!e.target.value) {
+		if(!container) {
+			let arr = await fetchPokemon(startOffset)
 
+			createCards(...arr.results);
+		} else {
+			return
+		}
+	}
+
+
+
+  })
+
+
+  searchButton.addEventListener('click', async () => {
+	let searchInputValue = document.querySelector('.search-input').value
+	if(!searchInputValue) return
+
+
+
+
+	
+
+	let result = await searchPoke(searchInputValue)
+
+
+	console.log(result)
+	let card = await createCard(result)
+
+	let container = document.querySelector('.card-container')
+	container.textContent = ''
+	
+	if(card) {
+		container.appendChild(card)
+	}
+	
+	
+  })
 }
-
-
 
 function createCards(arr) {
+  let container = document.querySelector(".card-container");
+
+  if (container) {
+    container.textContent = "";
+
+  }
+
+  console.log(arr)
 
 
+  arr.forEach(async (pokemon) => {
+    let card = await createCard(pokemon);
 
-        let container = document.querySelector('.card-container')
-
-        if(container) {
-                container.textContent = ''
-        }
-
-      
-
-
-        arr.forEach(async pokemon => {
-                let card = await createCard(pokemon)
-
-                container.appendChild(card)
-
-        })
+    container.appendChild(card);
+  });
 }
-
-
 
 async function searchPoke(name) {
+  if (!name) return;
 
+  const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
 
-        if(!name) return
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
 
-        const url = `https://pokeapi.co/api/v2/pokemon/${name}`
+  try {
+    const response = await fetch(url, options);
 
-        const options = {
-                method: 'GET',
-                headers: {
-                        'Content-Type' : 'application/json'
-                }
-        }
+    if (response.status === 200) {
+      const data = await response.json();
 
-        try {
-                const response = await fetch(url, options)
-
-
-                if(response.status === 200) {
-                        const data = await response.json()
-
-                        console.log(data)
-                } else {
-                        console.log(response.status)
-                }
-        } catch(err) {
-                console.log(err)
-        }
-
+      return data
+    } else {
+      console.log(response.status);
+    }
+  } catch (err) {
+    console.log(err);
+  }
 }
-
-

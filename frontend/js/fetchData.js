@@ -3,7 +3,7 @@
 
 export async function fetchPokemon(offset) {
 
-    let url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`
+    let url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=40`
 
     let options = {
         method: 'GET',

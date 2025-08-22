@@ -4,29 +4,33 @@
 
 export async function createCard(pokemon) {
 
-    let data = null
+    let data = pokemon
 
-
-    const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type' : 'application/json'
+    
+    if(data.url) {
+        try {
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            }
+            const response = await fetch(data.url, options)
+    
+            if(response.status === 200) {
+                data = await response.json()
+    
+                
+            } else {
+                console.log(response.status)
+            }
+        } catch(err) {
+            console.log("error: " + err)
         }
+
     }
 
-    try {
-        const response = await fetch(pokemon.url, options)
-
-        if(response.status === 200) {
-            data = await response.json()
-
-            console.log(data)
-        } else {
-            console.log(response.status)
-        }
-    } catch(err) {
-        console.log("error: " + err)
-    }
+    
    
 
     let card = document.createElement('div');
