@@ -14,6 +14,38 @@
     <script type="module" src="./js/main.js" defer></script>
   </head>
   <body>
+
+    <div class="modal-container">
+      <div class="modal-info-container">
+        <button class="exit-modal-button">X</button>
+        <div class="modal-info-left">
+          <div class="modal-pokemon-name">Bulbasaur</div>
+          <img class="modal-pokemon-img"></img>
+        </div>
+        <div class="modal-info-right">
+          <div class="modal-databox">
+            <span class="databox-label">Base Experience</span>
+            <span class="databox-base">399</span>
+          </div>
+          <div class="modal-databox">
+            <span class="databox-label">Height</span>
+            <span class="databox-height">399</span>
+          </div>
+          <div class="modal-databox">
+            <span class="databox-label">Weight</span>
+            <span class="databox-weight">399</span>
+          </div>
+          <div class="modal-databox">
+            <span class="databox-label">id</span>
+            <span class="databox-id">399</span>
+          </div>
+          <div class="modal-databox">
+            <span class="databox-label">Order</span>
+            <span class="databox-order">399</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="main-container">
       <div class="header-container">
         <div class="logo-container">
@@ -48,9 +80,24 @@
       <div class="wel-body-container">
         <div class="welcome-left-container">
           <img src="./assets/icons/star.png" alt="" class="star-img" />
+
+          <div class="favorite-cards-container">
+            <div class="favorite-card">
+              <div class="remove-favorite">-</div>
+              <div class="favorite-card-img"></div>
+              <div class="favorite-card-name">charizard</div>
+            </div>
+          </div>
         </div>
         <div class="welcome-middle-container">
-          <div class="card-container"></div>
+          <div class="card-container">
+            <div class="card">
+              <div class="card-pokemon-name">charizard</div>
+              <div class="pokemon-img"></div>
+              <div class="card-pokemon-base">399</div>
+              <img src="./assets/icons/star.png" alt="" class="card-star">
+            </div>
+          </div>
           <div class="card-next-container">
             <button class="card-next">Load More</button>
           </div>

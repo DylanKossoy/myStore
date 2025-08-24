@@ -7,10 +7,19 @@ let startOffset = 0;
 let nextButton = document.querySelector(".card-next");
 let searchButton = document.querySelector(".search-button");
 let searchInput = document.querySelector(".search-input");
+let headerName = document.querySelector(".header-name");
+let exitModalButton = document.querySelector('.exit-modal-button')
 
 activateWelcomePage();
 
 export async function activateWelcomePage() {
+
+
+  let userData = JSON.parse(sessionStorage.getItem("userData"));
+  console.log(userData)
+
+ 
+  // headerName.textContent = userData.user.username;
   let arr = await fetchPokemon(startOffset);
 
   pokemonArray.push(...arr.results);
@@ -18,11 +27,19 @@ export async function activateWelcomePage() {
   if (!searchInput.value) {
     createCards(pokemonArray);
   } else {
-
   }
 
+
+
+  exitModalButton.addEventListener('click', () => {
+    let modalContainer = document.querySelector('.modal-container');
+
+    modalContainer.style.display = 'none'
+  })
+
   nextButton.addEventListener("click", async () => {
-	if(searchInput.value) return
+    if (searchInput.value) return;
+    
     startOffset += 20;
     let newArr = await fetchPokemon(startOffset);
     console.log(newArr);
@@ -32,49 +49,24 @@ export async function activateWelcomePage() {
     createCards(pokemonArray);
   });
 
+ 
 
-  searchInput.addEventListener("input", async (e) => {
+  searchButton.addEventListener("click", async () => {
+    let searchInputValue = document.querySelector(".search-input").value;
+    if (!searchInputValue) return;
 
-	let container = document.querySelector('.card-container')
-	if(!e.target.value) {
-		if(!container) {
-			let arr = await fetchPokemon(startOffset)
+    let result = await searchPoke(searchInputValue);
 
-			createCards(...arr.results);
-		} else {
-			return
-		}
-	}
+    console.log(result);
+    let card = await createCard(result);
 
+    let container = document.querySelector(".card-container");
+    container.textContent = "";
 
-
-  })
-
-
-  searchButton.addEventListener('click', async () => {
-	let searchInputValue = document.querySelector('.search-input').value
-	if(!searchInputValue) return
-
-
-
-
-	
-
-	let result = await searchPoke(searchInputValue)
-
-
-	console.log(result)
-	let card = await createCard(result)
-
-	let container = document.querySelector('.card-container')
-	container.textContent = ''
-	
-	if(card) {
-		container.appendChild(card)
-	}
-	
-	
-  })
+    if (card) {
+      container.appendChild(card);
+    }
+  });
 }
 
 function createCards(arr) {
@@ -82,11 +74,9 @@ function createCards(arr) {
 
   if (container) {
     container.textContent = "";
-
   }
 
-  console.log(arr)
-
+  console.log(arr);
 
   arr.forEach(async (pokemon) => {
     let card = await createCard(pokemon);
@@ -113,7 +103,7 @@ async function searchPoke(name) {
     if (response.status === 200) {
       const data = await response.json();
 
-      return data
+      return data;
     } else {
       console.log(response.status);
     }

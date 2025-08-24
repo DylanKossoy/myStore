@@ -1,4 +1,95 @@
+body {
+    position: relative;
+}
 
+.modal-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.733);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.modal-info-container {
+    width: 1000px;
+    height: 600px;
+    background: white;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+}
+
+
+.modal-info-left {
+    width: 400px;
+    height: 500px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-pokemon-name {
+    font-size: 40px;
+    color: black;
+}
+
+.modal-pokemon-img {
+    height: 300px;
+    width: 300px;
+   
+    margin-top: 2rem;
+}
+
+.modal-info-right {
+    width: 400px;
+    height: 500px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-databox {
+    width: 400px;
+    border-bottom: 1px solid black;
+    
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+}
+
+.databox-label {
+    font-size: 20px;
+}
+.exit-modal-button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 30px;
+    background: none;
+    color: rgb(142, 9, 9);
+    border: none;
+    cursor: pointer;
+}
+
+.exit-modal-button:hover {
+    color: red;
+}
 
 
 
@@ -36,6 +127,57 @@
     background: rgba(0, 0, 0, 0.29);
     display: flex;
     position: relative;
+    align-items: end;
+}
+
+.favorite-cards-container {
+    width: 400px;
+    height: 700px;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.favorite-card {
+    height: 80px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+}
+
+.favorite-card-img {
+    width: 100px;
+    height: 80px;
+    
+}
+
+.favorite-card-name {
+    margin-inline: 2rem;
+    font-size: 20px;
+}
+
+.remove-favorite {
+    width: 30px;
+    height: 30px;
+    margin-inline: 1rem;
+    border-radius: 50%;
+    background: red;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.remove-favorite:hover {
+    background: rgba(255, 0, 0, 0.502);
 }
 
 .star-img {
@@ -118,6 +260,7 @@
     justify-content: space-around;
     
     align-items: center;
+    position: relative;
 }
 
 .card:hover {
@@ -321,6 +464,35 @@
     margin-block: 2rem;
 }
 
+.card-star {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    bottom: 10px;
+    left: 10px;
+   
+    cursor: pointer;
+    clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background: rgba(128, 128, 128, 0.256);
+}
+
+.card-star:hover {
+    background: grey;
+}
+
+
+
 .join-input-label {
     color: white;
     font-size: 15px;
@@ -401,6 +573,32 @@
     align-items: center;
    
     
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1750px){
+
+    .welcome-left-container {
+        width: 300px;
+    }
+
+    .welcome-right-container {
+        width: 350px;
+    }
+
+    .welcome-right-box {
+        width: 340px;
+    }
+
+    .favorite-cards-container {
+        width: 300px;
+    }
 }
 
 

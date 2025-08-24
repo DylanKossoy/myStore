@@ -137,6 +137,8 @@ async function handleSubmit(e) {
 
 
             window.location.href = './welcome.html'
+
+            sessionStorage.setItem('userData', JSON.stringify(data))
            
 
 

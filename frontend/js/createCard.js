@@ -1,5 +1,5 @@
 
-
+import { showModal } from "./modal.js"
 
 
 export async function createCard(pokemon) {
@@ -19,6 +19,7 @@ export async function createCard(pokemon) {
     
             if(response.status === 200) {
                 data = await response.json()
+                console.log(data)
     
                 
             } else {
@@ -37,6 +38,11 @@ export async function createCard(pokemon) {
     let pokeName = document.createElement('div')
     let pokeImg = document.createElement('img')
     let pokemonBase = document.createElement('div')
+    let favoriteCard = document.createElement('div')
+
+    
+    favoriteCard.className = 'card-star'
+    favoriteCard.tabIndex = 0;
 
 
     
@@ -52,6 +58,12 @@ export async function createCard(pokemon) {
     card.appendChild(pokeName)
     card.appendChild(pokeImg)
     card.appendChild(pokemonBase)
+    card.appendChild(favoriteCard)
+
+
+    card.addEventListener('click', () => {
+        showModal(data)
+    })
 
 
 
