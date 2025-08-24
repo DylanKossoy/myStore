@@ -9,7 +9,7 @@ body {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.733);
-    z-index: 1;
+    z-index: 2;
     backdrop-filter: blur(10px);
     display: none;
     justify-content: center;
@@ -121,10 +121,20 @@ body {
     
 }
 
+.left-cover-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.404);
+    backdrop-filter: blur(10px);
+}
+
 .welcome-left-container {
     width: 400px;
     height: calc(100vh - 150px);
-    background: rgba(0, 0, 0, 0.29);
+    background-image: url('../assets/img/Wartortle.webp');
+    background-size: cover;
+ 
     display: flex;
     position: relative;
     align-items: end;
@@ -133,6 +143,9 @@ body {
 .favorite-cards-container {
     width: 400px;
     height: 700px;
+   
+   z-index: 1;
+    
    
     margin-bottom: 1rem;
     overflow-y: auto;
@@ -143,13 +156,18 @@ body {
 
 .favorite-card {
     height: 80px;
-    background: white;
+    background: rgba(255, 255, 255, 0.662);
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
     cursor: pointer;
 
+}
+
+.settings {
+    background-image: url('../assets/img/settingsBackground.png');
+    z-index: 1;
 }
 
 .favorite-card:hover {
@@ -194,10 +212,22 @@ body {
 .welcome-middle-container {
     width: 1000px;
     height: calc(100vh - 150px);
-    background: rgba(0, 0, 0, 0.684);
+    background-image: url('../assets/img/char.png');
+    background-size: cover;
     overflow-y: hidden;
     padding-bottom: 2rem;
+    position: relative;
     
+    
+}
+
+.welcome-middle-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.342);
+    backdrop-filter: blur(10px);
+
     
 }
 
@@ -232,6 +262,7 @@ body {
     color: white;
     background: rgb(81, 79, 79);
     border: none;
+    z-index: 1;
    
 }
 
@@ -256,7 +287,7 @@ body {
 .card {
     width: 122px;
     height: 150px;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.532);
     margin: .5rem;
     margin-bottom: 1.5rem;
     border-radius: 10px;
@@ -297,19 +328,110 @@ body {
 .welcome-right-container {
     width: 450px;
     height: calc(100vh - 150px);
-    
+    background-image: url('../assets/img/pokemon-png-19.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
     display: flex;
     flex-direction: column; 
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.welcome-right-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.353);
+    backdrop-filter: blur(10px);
 }
 
 .welcome-right-box {
     width: 440px;
     height: 250px;
-    background: rgb(186, 186, 186);
+    background: rgba(255, 255, 255, 0.46);
     margin-block: 0.5rem;
+    z-index: 1;
 }
+
+.welcome-images-box {
+    width: 440px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.556);
+    background-image: url('../assets/img/Poke_Ball.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-block: 0.5rem;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding: 2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.images-label {
+    font-size: 25px;
+}
+
+.welcome-settings-box {
+    width: 440px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.556);
+    background-image: url('../assets/img/settingsBackground.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-block: 0.5rem;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding: 2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.settings-label {
+    font-size: 25px;
+    
+}
+
+.shiny-label {
+    font-size: 25px;
+}
+
+.welcome-settings-box:hover {
+    transform: scale(1.02);
+}
+
+.welcome-images-box:hover {
+    transform: scale(1.02)
+}
+
+.welcome-shiny-box:hover {
+    transform: scale(1.02);
+}
+
+.welcome-shiny-box {
+    width: 440px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.556);
+    background-image: url('../assets/img/shinyPoke.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-block: 0.5rem;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding: 2rem;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+
 
 .header-search-container {
     width: 800px;
@@ -344,7 +466,15 @@ body {
     justify-content: center;
     align-items: center;
     width: 300px;
+    padding-right: 2rem;
    
+  
+   
+}
+
+.header-name-img {
+    width: 50px;
+    margin-inline: 1rem;
 }
 
 .header-name {
@@ -608,6 +738,27 @@ body {
     .favorite-cards-container {
         width: 300px;
     }
+
+
+    .remove-favorite {
+        width: 20px;
+        height: 20px;
+    }
+
+    .favorite-card-name {
+        font-size: 15px;
+    }
+
+    .welcome-settings-box {
+        width: 340px;
+        background-size: contain;
+    }
+
+    .welcome-images-box {
+        width: 340px;
+    }
+
+    
 }
 
 

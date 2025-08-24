@@ -1,6 +1,6 @@
 
 
-
+let userData = sessionStorage.getItem('userData')
 let favoriteArrays = []
 
 
@@ -29,11 +29,11 @@ export function grabFavorites() {
 export function deleteFavorite(pokemon) {
 
 
-    const idx = favoriteArrays.find(poke => poke.name === pokemon.name)
+    const idx = favoriteArrays.findIndex(poke => poke.name === pokemon.name)
 
 
     if(idx !== -1) {
-        console.log(idx)
+       
         favoriteArrays.splice(idx, 1)
     }
     
