@@ -1,5 +1,7 @@
 
 import { showModal } from "./modal.js"
+import { addFavorite, grabFavorites} from "../store/userStore.js"
+import { createFavorites } from './welcome.js'
 
 
 export async function createCard(pokemon) {
@@ -41,8 +43,29 @@ export async function createCard(pokemon) {
     let favoriteCard = document.createElement('div')
 
     
+
+    
     favoriteCard.className = 'card-star'
     favoriteCard.tabIndex = 0;
+
+    favoriteCard.addEventListener('click', async (e) => {
+        e.stopPropagation()
+
+
+        favoriteCard.id = 'gold'
+
+
+
+
+        
+        addFavorite(pokemon)
+        let arr = grabFavorites()
+
+        createFavorites(arr)
+
+        console.log(grabFavorites())
+
+    })
 
 
     

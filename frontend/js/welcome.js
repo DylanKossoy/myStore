@@ -1,5 +1,6 @@
 import { createCard } from "./createCard.js";
 import { fetchPokemon } from "./fetchData.js";
+import { createFavoriteCard } from './favoriteCard.js'
 
 let pokemonArray = [];
 let startOffset = 0;
@@ -83,6 +84,25 @@ function createCards(arr) {
 
     container.appendChild(card);
   });
+}
+
+
+export function createFavorites(arr) {
+  let container = document.querySelector('.favorite-cards-container')
+
+
+  if(!arr) return
+
+
+  container.textContent = ''
+
+
+  arr.forEach( async (pokemon) => {
+    let card = await createFavoriteCard(pokemon);
+
+
+    container.appendChild(card)
+  })
 }
 
 async function searchPoke(name) {

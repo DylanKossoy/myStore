@@ -133,7 +133,7 @@ body {
 .favorite-cards-container {
     width: 400px;
     height: 700px;
-    border: 1px solid black;
+   
     margin-bottom: 1rem;
     overflow-y: auto;
     display: flex;
@@ -148,7 +148,12 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
+    cursor: pointer;
 
+}
+
+.favorite-card:hover {
+    background: rgb(188, 188, 188);
 }
 
 .favorite-card-img {
@@ -270,7 +275,11 @@ body {
 
 .card-pokemon-name {
     font-size: 15px;
-    
+
+}
+
+#gold {
+    background: gold;
 }
 
 .card-pokemon-base {
@@ -281,7 +290,7 @@ body {
 
 .pokemon-img {
     height: 80px;
-    background: white;
+    background: none;
     width: 100px;
 }
 
