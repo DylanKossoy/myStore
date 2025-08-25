@@ -1,6 +1,7 @@
 import { createCard } from "./createCard.js";
 import { fetchPokemon } from "./fetchData.js";
 import { createFavoriteCard } from './favoriteCard.js'
+import { grabFavorites } from "../store/userStore.js";
 
 let pokemonArray = [];
 let startOffset = 0;
@@ -10,6 +11,7 @@ let searchButton = document.querySelector(".search-button");
 let searchInput = document.querySelector(".search-input");
 let headerName = document.querySelector(".header-name");
 let exitModalButton = document.querySelector('.exit-modal-button')
+let settingsBox = document.querySelector('.welcome-settings-box')
 
 activateWelcomePage();
 
@@ -19,16 +21,22 @@ export async function activateWelcomePage() {
   let userData = JSON.parse(sessionStorage.getItem("userData"));
   console.log(userData)
 
+  console.log("hello")
+
  
   // headerName.textContent = userData.user.username;
   let arr = await fetchPokemon(startOffset);
+  let arr2 = JSON.parse(localStorage.getItem('favArray'))
+  console.log(arr2)
+
+  createFavorites(arr2)
 
   pokemonArray.push(...arr.results);
 
-  if (!searchInput.value) {
+ 
     createCards(pokemonArray);
-  } else {
-  }
+    
+ 
 
 
 
@@ -68,6 +76,11 @@ export async function activateWelcomePage() {
       container.appendChild(card);
     }
   });
+
+
+  settingsBox.addEventListener('click', () => {
+    window.location.href = './editUser.html'
+  })
 }
 
 function createCards(arr) {

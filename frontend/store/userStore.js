@@ -5,6 +5,8 @@ let favoriteArrays = []
 
 
 
+
+
 export function addFavorite(pokemon) {
 
     const exist = favoriteArrays.some(poke => poke.name === pokemon.name)
@@ -12,6 +14,8 @@ export function addFavorite(pokemon) {
 
     if(!exist) {
         favoriteArrays.push(pokemon)
+
+       localStorage.setItem('favArray', JSON.stringify(favoriteArrays))
 
     }
   
@@ -35,6 +39,7 @@ export function deleteFavorite(pokemon) {
     if(idx !== -1) {
        
         favoriteArrays.splice(idx, 1)
+        localStorage.setItem('favArray', JSON.stringify(favoriteArrays))
     }
     
 }

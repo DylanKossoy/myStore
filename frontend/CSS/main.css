@@ -99,7 +99,20 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--font-primary);
+   
 }
+
+.go-back-button {
+    position: absolute;
+    background: none;
+    border: none;
+    width: 80px;
+    left: 50px;
+    top: 20px;
+    cursor: pointer;
+}
+
+
 
 .header-container {
     height: 150px;
@@ -521,6 +534,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.edit-body-container {
+    height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.edit-inputs-container {
+    background: var(--color-join-inputs-container);
+   width: 700px;
+   height: 700px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 20px;
+   padding: 1rem;
+   align-items: center;
 }
 
 

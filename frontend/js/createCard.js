@@ -21,7 +21,7 @@ export async function createCard(pokemon) {
     
             if(response.status === 200) {
                 data = await response.json()
-                console.log(data)
+                
     
                 
             } else {
